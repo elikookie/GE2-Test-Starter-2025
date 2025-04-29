@@ -27,8 +27,8 @@ size = Vector2(100, 100)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jgr37"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_uarwn"]
-radius = 2.03447
+[sub_resource type="BoxShape3D" id="BoxShape3D_8h0ww"]
+size = Vector3(1, 0.0651855, 1)
 
 [node name="drone_scene" type="Node3D"]
 
@@ -62,8 +62,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.49081, -1.77358)
 stream = ExtResource("2_ib3uf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36945, 1.53997)
-shape = SubResource("SphereShape3D_uarwn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0293892, 0)
+shape = SubResource("BoxShape3D_8h0ww")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20367, 8.96231)
