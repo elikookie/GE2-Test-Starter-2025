@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1mt883kcp3i"]
+[gd_scene load_steps=11 format=3 uid="uid://b1mt883kcp3i"]
 
 [ext_resource type="Script" path="res://drone.gd" id="1_qmp1g"]
+[ext_resource type="AudioStream" uid="uid://c8fo6g02qxpby" path="res://jet.wav" id="2_ib3uf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2leoc"]
 sky_top_color = Color(2.66644e-05, 0.329521, 0.915321, 1)
@@ -132,6 +133,9 @@ size = Vector3(0.644043, 0.0644531, 0.101807)
 transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_7fu1h")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+stream = ExtResource("2_ib3uf")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20367, 8.96231)

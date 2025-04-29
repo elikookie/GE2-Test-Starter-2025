@@ -1,5 +1,4 @@
 extends CharacterBody3D
-
 const MAX_SPEED = 3.0
 
 func _physics_process(delta: float) -> void:
@@ -13,6 +12,7 @@ func _physics_process(delta: float) -> void:
 		while startSpeed < MAX_SPEED:
 			startSpeed = startSpeed + 0.1
 			velocity.y = global_position.y + startSpeed
+			$AudioStreamPlayer3D.play()
 		velocity.y = global_position.y + startSpeed
 	else:
 		while startSpeed != 0:
@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 
 	var input_dir := Input.get_vector("left", "right", "forward", "reverse")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	$AudioStreamPlayer3D.play()
 	if direction:
 		velocity.x = direction.x * MAX_SPEED
 		velocity.z = direction.z * MAX_SPEED
