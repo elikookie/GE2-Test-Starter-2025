@@ -1,13 +1,147 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc5bp08nil261"]
+[gd_scene load_steps=8 format=3 uid="uid://cc5bp08nil261"]
+
+[ext_resource type="Material" uid="uid://43802xt7elcj" path="res://assets/droneBlack.tres" id="1_eaivj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boybb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx344"]
+albedo_color = Color(9.14484e-07, 0.456656, 0.456693, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkcum"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_rs8y1"]
+resource_name = "flying"
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("droneBody/P1/Propeller")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.342734, 0, 0.939433, 0.566667, 1, 0, 0.790166, 0, 0.612893, 1, 1, 0, 0.999564, 0, -0.0295354)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("droneBody/P1/Propeller2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -0.382683, 0, 0.92388, 0.6, 1, 0, 0, 0, 1, 1, 1, 0, 0.707107, 0, 0.707107)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("droneBody/P2/Propeller")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 1, 0.666667, 1, 0, 0.786321, 0, 0.617818, 1, 1, 0, 0.968252, 0, 0.249974)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("droneBody/P2/Propeller2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 1, 0.533333, 1, 0, 0.804344, 0, 0.594163, 0.933333, 1, 0, 0.991889, 0, -0.127108)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("droneBody/P3/Propeller")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0.342734, 0, 0.939433, 0.533333, 1, 0, 0.849598, 0, 0.52743, 0.933333, 1, 0, 0.995899, 0, 0.0904672)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("droneBody/P3/Propeller2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0.0333333, 1, 0, -0.386824, 0, 0.922154, 0.533333, 1, 0, 0.21321, 0, 0.977006, 0.933333, 1, 0, 0.722213, 0, 0.691671)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("droneBody/P4/Propeller")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0.0333333, 1, 0, 0.342734, 0, 0.939433, 0.5, 1, 0, 0.892955, 0, 0.450145, 0.9, 1, 0, 0.999215, 0, -0.0396262)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("droneBody/P4/Propeller2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0.0333333, 1, 0, -0.386824, 0, 0.922154, 0.466667, 1, 0, 0.434217, 0, 0.900808, 0.966667, 1, -0.0237429, 0.938194, -0.0701011, 0.338104)
+
+[sub_resource type="Animation" id="Animation_75pnt"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("droneBody/P1/Propeller")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.342734, 0, 0.939433)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("droneBody/P1/Propeller2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("droneBody/P2/Propeller")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("droneBody/P2/Propeller2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("droneBody/P3/Propeller")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0.342734, 0, 0.939433)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("droneBody/P3/Propeller2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, -0.386824, 0, 0.922154)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("droneBody/P4/Propeller")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0, 0.342734, 0, 0.939433)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("droneBody/P4/Propeller2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, -0.386824, 0, 0.922154)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wphaj"]
+_data = {
+"RESET": SubResource("Animation_75pnt"),
+"flying": SubResource("Animation_rs8y1")
+}
 
 [node name="Node3D" type="Node3D"]
 
 [node name="droneBody" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.233188, 0)
+use_collision = true
 size = Vector3(1, 0.217773, 1)
+material = SubResource("StandardMaterial3D_boybb")
 
 [node name="Stick" type="CSGBox3D" parent="droneBody"]
 transform = Transform3D(0.855635, 0, -0.517579, 0, 1, 0, 0.517579, 0, 0.855635, -0.80926, -0.0251732, -0.676184)
@@ -25,55 +159,67 @@ size = Vector3(1, 0.0644531, 0.184082)
 transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -0.748454, -0.0251732, 0.563327)
 size = Vector3(1, 0.0644531, 0.184082)
 
-[node name="Propellers" type="CSGCombiner3D" parent="droneBody"]
+[node name="P1" type="CSGCombiner3D" parent="droneBody"]
+material_override = SubResource("StandardMaterial3D_tx344")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="droneBody/Propellers"]
+[node name="Propeller" type="CSGBox3D" parent="droneBody/P1"]
+transform = Transform3D(0.765067, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765067, -1.12404, 0.0466111, 0.8727)
+size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="Propeller" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
+[node name="Propeller2" type="CSGBox3D" parent="droneBody/P1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="Propeller2" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_pkcum")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="droneBody/Propellers"]
+[node name="P2" type="CSGCombiner3D" parent="droneBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24756, 0, 0)
 
-[node name="Propeller" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D2"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
+[node name="Propeller" type="CSGBox3D" parent="droneBody/P2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="Propeller2" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D2"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
+[node name="Propeller2" type="CSGBox3D" parent="droneBody/P2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="droneBody/Propellers"]
+[node name="P3" type="CSGCombiner3D" parent="droneBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24756, 0, -1.79529)
 
-[node name="Propeller" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D3"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
+[node name="Propeller" type="CSGBox3D" parent="droneBody/P3"]
+transform = Transform3D(0.765067, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765067, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="Propeller2" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D3"]
+[node name="Propeller2" type="CSGBox3D" parent="droneBody/P3"]
 transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="droneBody/Propellers"]
+[node name="P4" type="CSGCombiner3D" parent="droneBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0573723, 0, -1.79529)
 
-[node name="Propeller" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D4"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
+[node name="Propeller" type="CSGBox3D" parent="droneBody/P4"]
+transform = Transform3D(0.765067, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765067, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
 
-[node name="Propeller2" type="CSGBox3D" parent="droneBody/Propellers/CSGCombiner3D4"]
+[node name="Propeller2" type="CSGBox3D" parent="droneBody/P4"]
 transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
 material_override = SubResource("StandardMaterial3D_pkcum")
 size = Vector3(0.644043, 0.0644531, 0.101807)
+material = ExtResource("1_eaivj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wphaj")
+}
+autoplay = "flying"

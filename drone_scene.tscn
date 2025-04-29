@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1mt883kcp3i"]
 
+[ext_resource type="PackedScene" uid="uid://cc5bp08nil261" path="res://assets/drone.tscn" id="1_hl71w"]
 [ext_resource type="Script" path="res://drone.gd" id="1_qmp1g"]
 [ext_resource type="AudioStream" uid="uid://c8fo6g02qxpby" path="res://jet.wav" id="2_ib3uf"]
 
@@ -16,7 +17,6 @@ sky_material = SubResource("ProceduralSkyMaterial_2leoc")
 background_mode = 2
 sky = SubResource("Sky_e63g5")
 tonemap_mode = 2
-sdfgi_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrrl7"]
 albedo_color = Color(0.383946, 0.692665, 0.222696, 1)
@@ -30,9 +30,6 @@ size = Vector2(100, 100)
 [sub_resource type="SphereShape3D" id="SphereShape3D_uarwn"]
 radius = 2.03447
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fu1h"]
-albedo_color = Color(0, 0, 0, 1)
-
 [node name="drone_scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -43,6 +40,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.573766, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
 mesh = SubResource("PlaneMesh_qhlfa")
@@ -53,89 +51,19 @@ shape = SubResource("WorldBoundaryShape3D_jgr37")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_qmp1g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36945, 1.53997)
-shape = SubResource("SphereShape3D_uarwn")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49081, 1.77358)
 skeleton = NodePath("../..")
 
-[node name="droneBody" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.233188, 0)
-size = Vector3(1, 0.217773, 1)
-
-[node name="Stick" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody"]
-transform = Transform3D(0.855635, 0, -0.517579, 0, 1, 0, 0.517579, 0, 0.855635, -0.80926, -0.0251732, -0.676184)
-size = Vector3(1, 0.0644531, 0.184082)
-
-[node name="Stick2" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody"]
-transform = Transform3D(-0.733089, 0, -0.680133, 0, 1, 0, 0.680133, 0, -0.733089, 0.767747, -0.0251732, -0.676184)
-size = Vector3(1, 0.0644531, 0.184082)
-
-[node name="Stick3" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody"]
-transform = Transform3D(-0.829652, 0, 0.558281, 0, 1, 0, -0.558281, 0, -0.829652, 0.826715, -0.0251732, 0.639456)
-size = Vector3(1, 0.0644531, 0.184082)
-
-[node name="Stick4" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -0.748454, -0.0251732, 0.563327)
-size = Vector3(1, 0.0644531, 0.184082)
-
-[node name="Propellers" type="CSGCombiner3D" parent="CharacterBody3D/MeshInstance3D/droneBody"]
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers"]
-
-[node name="Propeller" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="Propeller2" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24756, 0, 0)
-
-[node name="Propeller" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D2"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="Propeller2" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D2"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24756, 0, -1.79529)
-
-[node name="Propeller" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D3"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="Propeller2" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D3"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0573723, 0, -1.79529)
-
-[node name="Propeller" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D4"]
-transform = Transform3D(0.765068, 0, 0.64395, 0, 1, 0, -0.64395, 0, 0.765068, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
-
-[node name="Propeller2" type="CSGBox3D" parent="CharacterBody3D/MeshInstance3D/droneBody/Propellers/CSGCombiner3D4"]
-transform = Transform3D(0.700735, 0, -0.713422, 0, 1, 0, 0.713422, 0, 0.700735, -1.12404, 0.0466111, 0.8727)
-material_override = SubResource("StandardMaterial3D_7fu1h")
-size = Vector3(0.644043, 0.0644531, 0.101807)
+[node name="Node3D" parent="CharacterBody3D/MeshInstance3D" instance=ExtResource("1_hl71w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.49081, -1.77358)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
 stream = ExtResource("2_ib3uf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36945, 1.53997)
+shape = SubResource("SphereShape3D_uarwn")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20367, 8.96231)
